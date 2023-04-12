@@ -4,7 +4,7 @@ function ProductDetail() {
   const productId = router.query.productId;
   return (
     <>
-      <h1>Details About Product {productId}</h1>
+      <h1>Details of Product {productId}</h1>
     </>
   );
 }
