@@ -4,7 +4,7 @@ export async function getStaticProps() {
   const posts = await getPosts();
   return {
     props: {
-      posts,
+      posts: posts.slice(0, 3),
     },
   };
 }
@@ -17,13 +17,10 @@ function Post({ posts }) {
         return (
           <div key={post.id}>
             <p>
-              <b>Title: </b>
+              <b> {post.id} </b>
               {post.title}
             </p>
-            <p>
-              <b>Body: </b>
-              {post.body}
-            </p>
+            <hr />
           </div>
         );
       })}
