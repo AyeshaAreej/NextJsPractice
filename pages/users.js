@@ -10,7 +10,7 @@ export async function getStaticProps() {
 }
 
 function UserList({ users }) {
-   return (
+  return (
     <>
       <h1>List of users</h1>
       {Object.values(users).map((user) => {
