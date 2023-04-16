@@ -1,5 +1,5 @@
 import { getUsers } from "./api/users-api";
-
+import User from "../components/user";
 export async function getStaticProps() {
   const users = await getUsers();
   return {
@@ -10,14 +10,13 @@ export async function getStaticProps() {
 }
 
 function UserList({ users }) {
-  return (
+   return (
     <>
       <h1>List of users</h1>
       {Object.values(users).map((user) => {
         return (
           <div key={user.id}>
-            <p>{user.name}</p>
-            <p>{user.email}</p>
+            <User user={user} />
           </div>
         );
       })}
